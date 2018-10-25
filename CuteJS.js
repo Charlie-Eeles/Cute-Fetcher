@@ -11,11 +11,6 @@ function randomiser(i){
 
 function fetcher(sub,x) {fetch(`https://www.reddit.com/r/${sub}.json?limit=${x}`)
     .then (response => response.json())
-    .then (response => {
-        if (!response.ok) {
-            throw Error(response.statusText);
-        }
-        return response;})
     .then (data => data.data.children.map(data => data.data.url))
     .then (map => {while (  typeof map[x] ==="undefined"||
                             typeof map[x] ==="null" ||
@@ -38,9 +33,6 @@ function fetcher(sub,x) {fetch(`https://www.reddit.com/r/${sub}.json?limit=${x}`
                            {img +=".gif"};
                         return img;})
     .then (img => cutePic.src=img)
-    .catch(function(error) {
-        console.log(error);
-    });
 }; 
 
 document.getElementById("cat-button").addEventListener("click", function(){
