@@ -1,15 +1,20 @@
+/* This removes the blue border when you select one of the buttons */
+button:focus {
+    outline:0;
+}
+/*------------------------------------
+    General Styling (No Media Queries)
+--------------------------------------*/
 body{
     background-color: #fcfdfe;
     margin: 0;
     padding: 0;
-    text-align:center;
-    
+    text-align:center;  
 }
-
 h1{
     margin-top:5vh;
-    color: #426e86;
-    font-family: 'Indie Flower', cursive;
+    color: #f18d9e;
+    font-family: 'Shadows Into Light', cursive;
     margin-bottom: 0;
 }
 
@@ -23,6 +28,7 @@ h1{
     display:block;
     margin: 0 auto;
     max-width:95%;
+    height:300px;
     object-fit:contain;
     border-radius:1.5%;
 }
@@ -31,8 +37,8 @@ h3{
     margin-top: 0;
     margin-bottom: 0%;
     font-size: 1.5rem;
-    font-family: 'Loved by the King', cursive;
-    color:#fa8d62;
+    font-family: 'Shadows Into Light', cursive;
+    color:#5bc8ac;
 }
 
 button{
@@ -43,16 +49,23 @@ button{
     width:60%;
     border-radius: 8px;
     background-color: #fcfdfe;
-    color: #fa8d62;
+    color: #f18d9e;
     display:block;
     margin: 0 auto 1%;
 }
 
 footer{
-    font-family: 'Loved by the King', cursive;
+    margin-top: 10px;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
+    color: #f18d9e;
 }
 
-@media screen and (min-width:800px){
+/*------------------------------------
+            Media Queries 
+--------------------------------------*/
+
+@media screen and (min-width:700px){
 
     h1{
         margin-top:2%;
@@ -63,7 +76,7 @@ footer{
     }
 
     .picture{
-        max-height: 400px;
+        height: 400px;
         padding-top:0;
     }
 
@@ -78,11 +91,20 @@ footer{
     }
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1000px){
     button{
-        
+        font-size: 0.7rem;
         height: 75px;
         width: 15%;
+    }
+    .picture{
+        height: 650px;
+    }
+}
+
+@media screen and (min-width: 1300px){
+    button{
+        font-size: 1.2rem;
     }
 }
 
