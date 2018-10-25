@@ -15,7 +15,8 @@ function fetcher(sub,x) {fetch(`https://www.reddit.com/r/${sub}.json?limit=${x}`
     .then (map => {while (  typeof map[x] ==="undefined"||
                             typeof map[x] ==="null" ||
                             map[x].indexOf("comment")>-1 ||
-                            map[x].indexOf("gallery")>-1 ||
+                            map[x].indexOf("gallery")>-1 || 
+                            map[x].indexOf("/a/")>-1 ||
                             map[x].indexOf("v.redd.it")>-1 ||        
                             map[x].indexOf("gifv")>-1 ||
                             map[x].indexOf(".html")>-1 ||
