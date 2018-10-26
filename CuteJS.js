@@ -11,6 +11,7 @@ function randomiser(i){
 
 function fetcher(sub,x) {fetch(`https://www.reddit.com/r/${sub}.json?limit=${x}`)
     .then (response => response.json())
+    .catch (err => console.log("oops", err))
     .then (data => data.data.children.map(data => data.data.url))
     .then (map => {while (  typeof map[x] ==="undefined"||
                             typeof map[x] ==="null" ||
